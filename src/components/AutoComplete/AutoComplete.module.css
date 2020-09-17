@@ -1,0 +1,20 @@
+.autocomplete-container {
+  max-width: 300px;
+  margin: auto;
+}
+
+.search-container, .search-input {
+  width: 100%;
+}
+
+.suggestions-list {
+  text-align: left;
+}
+
+.suggestion-item {
+  list-style-type: none;
+}
+
+.selected {
+  color: #EC5A49;
+}
