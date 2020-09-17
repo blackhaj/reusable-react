@@ -27,8 +27,10 @@ export default function SearchContainer(props) {
       />
       <Suggestions 
         activeSuggestion={activeSuggestion}
+        callback={callback}
         itemsKey={itemsKey} 
         query={query}
+        setQuery={setQuery}
         wordSuggestions={wordSuggestions}
       />
     </div>

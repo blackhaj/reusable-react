@@ -5,8 +5,10 @@ export default function Suggestions(props) {
   
   const {
     activeSuggestion,
+    callback,
     itemsKey,
     query,
+    setQuery,
     wordSuggestions,
   } = props;
   
@@ -19,7 +21,15 @@ export default function Suggestions(props) {
       output = <ul className={styles["suggestions-list"]}>
         { wordSuggestions.map((item, index) => {
             const nameOfClass = activeSuggestion === index ? styles["selected"] : "";
-            return <li key={item[itemsKey]} className={`${styles["suggestion-item"]} ${nameOfClass}`}>{item[itemsKey]}</li>
+            return (<li 
+                      key={item[itemsKey]} 
+                      onClick={() => {
+                        let item = wordSuggestions[index]
+                        if (item) callback(item)
+                        setQuery("")
+                      }} 
+                      className={`${styles["suggestion-item"]} ${nameOfClass}`}>{item[itemsKey]}
+                    </li>)
           })}
       </ul>
       // else render no matches

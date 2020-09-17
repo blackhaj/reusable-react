@@ -15,6 +15,6 @@
   list-style-type: none;
 }
 
-.selected {
+.selected, .suggestion-item:hover {
   color: #EC5A49;
 }
