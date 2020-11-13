@@ -1,5 +1,8 @@
 import React from 'react';
 
+/* Make sure you pass a unique key to the ErrorBoundary 
+so that when the error is resolved, a new ErrorBoundary is 
+rendered and the application doesn't get blocked */
 export default class ErrorBoundary extends React.Component {
   state = { error: null };
   static getDerivedStateFromError(error) {
